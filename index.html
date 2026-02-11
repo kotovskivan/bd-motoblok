@@ -1,13 +1,13 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eco Web</title>
+  <title>BD Motoblok — Eco Web</title>
 
   <!-- Desktop -->
   <link rel="stylesheet" href="css/desktop.css" media="(min-width: 769px)">
-  
   <!-- Mobile -->
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
 </head>
@@ -16,8 +16,169 @@
   <div id="header"></div>
 
   <main class="container">
-    <h1>Главная</h1>
-    <p>Базовая версия сайта.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__content">
+        <p class="badge">Eco-версия • без БД • быстрый откат</p>
+        <h1 class="hero__title">Тестовая веб-версия базы товаров</h1>
+        <p class="hero__text">
+          Один источник данных → разные шаблоны вывода (HTML/XML/XLSX). 
+          Эта версия показывает базовую структуру: шапка/футер фиксированы, контент меняется по страницам.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="product.html">Открыть пример товара</a>
+          <a class="btn btn--ghost" href="#how">Как это работает</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__num">10k+</div>
+            <div class="stat__label">товаров (цель)</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">2</div>
+            <div class="stat__label">CSS файла (PC/Mob)</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">∞</div>
+            <div class="stat__label">характеристик (шаблоны)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="panel">
+          <div class="panel__title">Быстрый тест</div>
+          <div class="panel__text">
+            Проверь, как отображается на моб/пк и как работает шаблонность header/footer.
+          </div>
+          <div class="panel__list">
+            <div class="panel__item">
+              <span class="dot"></span>
+              <span>Фиксированная шапка</span>
+            </div>
+            <div class="panel__item">
+              <span class="dot"></span>
+              <span>Контентная зона</span>
+            </div>
+            <div class="panel__item">
+              <span class="dot"></span>
+              <span>Футер одинаковый</span>
+            </div>
+          </div>
+          <a class="btn btn--secondary" href="product.html">Перейти к карточке</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <h2 class="section__title">Что тестируем</h2>
+      <p class="section__subtitle">Минимальный “скелет” проекта, который потом можно расширить под любые сайты и вложенности.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3 class="card__title">Шаблонность</h3>
+          <p class="card__text">Header и footer подгружаются из отдельных файлов. Меняешь один раз — обновляется везде.</p>
+          <ul class="card__list">
+            <li><strong>templates/header.html</strong></li>
+            <li><strong>templates/footer.html</strong></li>
+            <li><strong>js/layout.js</strong></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Разные устройства</h3>
+          <p class="card__text">Два отдельных CSS: для ПК и для моб. Никаких общих глобальных стилей на элементы.</p>
+          <ul class="card__list">
+            <li><strong>css/desktop.css</strong></li>
+            <li><strong>css/mobile.css</strong></li>
+            <li>Фиксированная шапка</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Вывод данных</h3>
+          <p class="card__text">Данные подставляются JS по принципу шаблона. Позже добавим: разные профили сайтов и вложенность.</p>
+          <ul class="card__list">
+            <li>HTML блоки</li>
+            <li>XML фиды</li>
+            <li>XLSX экспорт</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <h2 class="section__title">Как это будет работать дальше</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__body">
+            <div class="step__title">Одна “база” данных</div>
+            <div class="step__text">Храним товары и характеристики (пока в JS/JSON). В будущем можно подключить любую БД.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__body">
+            <div class="step__title">Профили сайтов</div>
+            <div class="step__text">Для каждого сайта задаём правила: какие блоки показать и как группировать характеристики.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__body">
+            <div class="step__title">Генератор вывода</div>
+            <div class="step__text">Один JS-генератор собирает HTML/XML/XLSX. Если сервисы упадут — статическая версия останется.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST BLOCKS -->
+    <section class="section">
+      <h2 class="section__title">Блоки для визуального теста</h2>
+
+      <div class="split">
+        <div class="notice">
+          <h3 class="notice__title">Стабильная “эко-версия”</h3>
+          <p class="notice__text">
+            Даже если позже подключим API/БД, эта версия может работать как статический сайт:
+            быстрый, дешёвый, с мгновенным откатом через Git.
+          </p>
+          <div class="notice__actions">
+            <a class="btn btn--primary" href="product.html">Тест карточки</a>
+            <a class="btn btn--ghost" href="#footer">Проверить футер</a>
+          </div>
+        </div>
+
+        <div class="mini-table">
+          <div class="mini-table__row">
+            <div class="mini-table__k">Стек</div>
+            <div class="mini-table__v">HTML / CSS (PC+Mob) / JS</div>
+          </div>
+          <div class="mini-table__row">
+            <div class="mini-table__k">Шаблоны</div>
+            <div class="mini-table__v">header/footer + JS render</div>
+          </div>
+          <div class="mini-table__row">
+            <div class="mini-table__k">Откат</div>
+            <div class="mini-table__v">Git commit → rollback</div>
+          </div>
+          <div class="mini-table__row">
+            <div class="mini-table__k">Цель</div>
+            <div class="mini-table__v">единая база → разные сайты</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer"></div>
